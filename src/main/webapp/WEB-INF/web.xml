@@ -2,6 +2,37 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+  <display-name>persons</display-name>
+
+  <!--
+  <welcome-file-list>
+    <welcome-file>index.jps</welcome-file>
+  </welcome-file-list>
+  -->
+
+  <!-- Отображаем сервлет -->
+  <servlet>
+    <servlet-name>roleServlet</servlet-name>
+    <servlet-class>controller/RoleServlet.java</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>roleServlet</servlet-name>
+    <url-pattern>/persons/role</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>personServlet</servlet-name>
+    <servlet-class>controller/PersonsServlet.java</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>personServlet</servlet-name>
+    <url-pattern>/persons/persons</url-pattern>
+  </servlet-mapping>
 </web-app>
+
+
